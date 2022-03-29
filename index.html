@@ -3,10 +3,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
     <title>Calculator</title>
 </head>
+
 <body>
-    <form>
+
+    <div class="display">
+        <p id="output">0</p>
+    </div>
+
+    <form class="firstRow">
         <input class="other"
        type="button"
        value="C">
@@ -22,8 +29,10 @@
        <input class="operator"
        type="button"
        value="÷">
-
-       <input class="number"
+    </form>
+    
+    <form class="secondRow">
+        <input class="number"
        type="button"
        value="7">
 
@@ -38,8 +47,10 @@
        <input class="operator"
        type="button"
        value="x">
+    </form>
 
-       <input class="number"
+    <form class="thirdRow">
+        <input class="number"
        type="button"
        value="4">
 
@@ -54,8 +65,10 @@
        <input class="number"
        type="button"
        value="-">
+    </form>
 
-       <input class="number"
+    <form class="fourthRow">
+        <input class="number"
        type="button"
        value="1">
 
@@ -70,7 +83,9 @@
        <input class="operator"
        type="button"
        value="+">
-
+    </form>
+       
+    <form class="fifthRow">
        <input id="zero"
        type="button"
        value="0">
@@ -82,10 +97,8 @@
        <input class="operator"
        type="button"
        value="=">
-    
-
     </form>
 
-    
+
 </body>
 </html>
