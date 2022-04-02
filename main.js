@@ -5,7 +5,7 @@ const equal = document.getElementById("equal");
 const clear = document.getElementById("clear");
 const negate = document.getElementById("negate");
 const percentage = document.getElementById("percentage");
-const display = document.querySelector(".display");
+const display = document.querySelector("#display");
 
 let newInput = "";
 let firstNumber = "";
@@ -61,6 +61,7 @@ number.forEach(item => {
 operator.forEach(item => {
     item.addEventListener("click", (e) => {
         point.disabled = false;
+        equal.disabled = true;
         operator.forEach (e => e.disabled = true)
 
         if (firstNumber == "") {

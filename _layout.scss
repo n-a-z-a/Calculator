@@ -1,0 +1,14 @@
+#display {
+    border: 20px none;
+    padding: 20px;
+    height: 30px;
+    max-height: 30px;
+    text-align: end;
+}
+
+.grid {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}

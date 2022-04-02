@@ -1,0 +1,46 @@
+$color-numbers-background: #01497C;
+$color-numbers: #A9D6E5;
+$color-operators-background: #012A4A;
+$color-operators: #A9D6E5;
+$color-other-background: #013A63;
+$color-other: #A9D6E5;
+
+.number {
+    background-color: $color-numbers-background;
+    // border-radius: 50%;
+    color: $color-numbers;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .operator {
+    background-color: $color-operators-background;
+    // border-radius: 50%;
+    color: $color-operators;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .other {
+    background-color: $color-other-background;
+    // border-radius: 50%;
+    color: $color-other;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  #equal {
+    background-color: $color-operators-background;
+    // border-radius: 50%;
+    color: $color-operators;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    font-size: 16px;
+  }
