@@ -1,29 +1,11 @@
 const number = document.querySelectorAll(".number");
 const operator = document.querySelectorAll(".operator");
-
-// const one = document.getElementById("one");
-// const two = document.getElementById("two");
-// const three = document.getElementById("three");
-// const four = document.getElementById("four");
-// const five = document.getElementById("five");
-// const six = document.getElementById("six");
-// const seven = document.getElementById("seven");
-// const eight = document.getElementById("eight");
-// const nine = document.getElementById("nine");
-// const zero = document.getElementById("zero");
 const point = document.getElementById("point");
-// const plus = document.getElementById("plus");
-// const minus = document.getElementById("minus");
-// const divide = document.getElementById("divide");
-// const multiply = document.getElementById("multiply");
 const equal = document.getElementById("equal");
 const clear = document.getElementById("clear");
 const negate = document.getElementById("negate");
 const percentage = document.getElementById("percentage");
 const display = document.querySelector(".display");
-
-// const buttons = document.querySelectorAll("button");
-// console.log(buttons);
 
 let newInput = "";
 let firstNumber = "";
@@ -35,25 +17,26 @@ let newOperator = "";
 let partialOutput = "";
 let finalOutput = "";
 
+//no operator button available until there's a number on display
+operator.forEach (e => e.disabled = true);
+
 //print numbers out to display 
 //prevent number from having more than one decimal point
 //reset display after final output
 number.forEach(item => {
     item.addEventListener("click", (e) => {
     equal.disabled = false;
+    operator.forEach (e => e.disabled = false);
      if (finalOutput == "") {
         newInput = e.target.value;
-        // console.log (newInput);
-        display.innerHTML += newInput
+        display.innerHTML += newInput;
         if(e.target.innerHTML === '.')
-        point.disabled = true;   
-        // console.log(output)    
+        point.disabled = true;     
     } else {
         display.innerHTML = ""
         finalOutput = ""
         newInput = e.target.value;
-        console.log (newInput);
-        display.innerHTML += newInput
+        display.innerHTML += newInput;
         if(e.target.innerHTML === '.')
         point.disabled = true;     
         }
@@ -78,17 +61,15 @@ number.forEach(item => {
 operator.forEach(item => {
     item.addEventListener("click", (e) => {
         point.disabled = false;
-        // for (let item = 0; item > operator.length; item++) {
-        //     operator[item].disabled = true;
-        // }
+        operator.forEach (e => e.disabled = true)
 
         if (firstNumber == "") {
-            firstNumber = display.innerHTML
-            firstOperator = e.target.value
+            firstNumber = display.innerHTML;
+            firstOperator = e.target.value;
             console.log(firstNumber)
-            display.innerHTML = ""
+            display.innerHTML = "";
         } else { 
-            secondNumber = display.innerHTML
+            secondNumber = display.innerHTML;
             newOperator = e.target.value;
             if (firstOperator == "+") {
                 partialOutput = parseFloat(firstNumber) + parseFloat(secondNumber);
@@ -99,37 +80,34 @@ operator.forEach(item => {
             } else if (firstOperator == "÷") {
                 partialOutput = parseFloat(firstNumber) / parseFloat(secondNumber);
             }
-            // display.innerHTML = output
-            console.log(partialOutput)
-            firstNumber = partialOutput
+            firstNumber = partialOutput;
             display.innerHTML = "";
-            firstOperator = newOperator
+            firstOperator = newOperator;
         }
     })
 })
-        //  firstNumber = display.innerHTML
-        //  point.disabled = false; 
-        //  firstOperator = e.target.value
-        //  console.log(firstNumber)
-        //  display.innerHTML = ""
 
 
 //when equal button pressed, store second number
 //complete calculation
 //update display with output
 //re-enable decimal point button
+//case of equal pressed after just one number
 equal.addEventListener("click", (e) => {
-    secondNumber = display.innerHTML
-    if (firstOperator == "+") {
-        finalOutput = parseFloat(firstNumber) + parseFloat(secondNumber);
-    } else if (firstOperator == "-") {
-        finalOutput = parseFloat(firstNumber) - parseFloat(secondNumber);
-    } else if (firstOperator == "x") {
-        finalOutput = parseFloat(firstNumber) * parseFloat(secondNumber);
-    } else if (firstOperator == "÷") {
-        finalOutput = parseFloat(firstNumber) / parseFloat(secondNumber);
-    }
-    display.innerHTML = finalOutput
+    if (firstNumber != "") {
+        secondNumber = display.innerHTML;
+        if (firstOperator == "+") {
+            finalOutput = parseFloat(firstNumber) + parseFloat(secondNumber);
+        } else if (firstOperator == "-") {
+            finalOutput = parseFloat(firstNumber) - parseFloat(secondNumber);
+        } else if (firstOperator == "x") {
+            finalOutput = parseFloat(firstNumber) * parseFloat(secondNumber);
+        } else if (firstOperator == "÷") {
+            finalOutput = parseFloat(firstNumber) / parseFloat(secondNumber);
+        }
+        display.innerHTML = finalOutput;
+    } else { display.innerHTML = display.innerHTML;
+        }
     point.disabled = false;
     equal.disabled = true;
     firstNumber = "";
@@ -146,6 +124,7 @@ clear.addEventListener("click", (e) => {
     secondNumber = "";
     firstOperator = "";
     output = "";
+    operator.forEach (e => e.disabled = true);
 })
 
 //percentage button
@@ -153,18 +132,18 @@ clear.addEventListener("click", (e) => {
 percentage.addEventListener("click", e => {
     point.disabled = true;
     if (display.innerHTML == "") {
-        display.innerHTML = "0"
+        display.innerHTML = "";
     } else {
-        display.innerHTML = parseFloat(display.innerHTML)/100
+        display.innerHTML = parseFloat(display.innerHTML)/100;
     }
 })
 
 //negate button
 negate.addEventListener("click", (e) => {
     if (display.innerHTML == "") {
-        display.innerHTML = "0"
+        display.innerHTML = "";
     } else {
-        display.innerHTML = parseFloat(display.innerHTML)* (-1)
+        display.innerHTML = parseFloat(display.innerHTML)* (-1);
     }
 })
 
