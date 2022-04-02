@@ -106,13 +106,11 @@ clear.addEventListener("click", (e) => {
 })
 
 
-point.addEventListener("dblclick", (e) => {
-    display.HTML
-})
-
-
 //percentage
-
+percentage.addEventListener("click", e => {
+    display.innerHTML = parseFloat(display.innerHTML)/100
+    point.disabled = true;
+})
 
 //negate button
 negate.addEventListener("click", (e) => {
