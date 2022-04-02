@@ -25,22 +25,38 @@ const display = document.querySelector(".display");
 // const buttons = document.querySelectorAll("button");
 // console.log(buttons);
 
+let newInput = "";
 let firstNumber = "";
-let firstOperator = "";
 let secondNumber = "";
-let output = "";
 
+let firstOperator = "";
 let newOperator = "";
+
+let partialOutput = "";
+let finalOutput = "";
 
 //print numbers out to display 
 //prevent number from having more than one decimal point
+//reset display after final output
 number.forEach(item => {
     item.addEventListener("click", (e) => {
-        const newInput = e.target.value;
+    equal.disabled = false;
+     if (finalOutput == "") {
+        newInput = e.target.value;
+        // console.log (newInput);
+        display.innerHTML += newInput
+        if(e.target.innerHTML === '.')
+        point.disabled = true;   
+        // console.log(output)    
+    } else {
+        display.innerHTML = ""
+        finalOutput = ""
+        newInput = e.target.value;
         console.log (newInput);
+        display.innerHTML += newInput
         if(e.target.innerHTML === '.')
         point.disabled = true;     
-        display.innerHTML += newInput  
+        }
     })
 })
 
@@ -50,39 +66,42 @@ number.forEach(item => {
 //re-enable the decimal point button
 //then store the operator 
 //then clear the display
-//CASE 2: if the operator button is pressed to concatenate a new operation:
+//CASE 2: if the operator button is pressed to concatenate a new operation, then
 //store the number on display as second number
 //store the new operator
 //re-enable the ecimal point button
 //execute the operation up to that point
 //the output becomes the new firstNumber
 //clear the display so a new number can be entered
-//the new operator replaces the revious operator for the next operation
+//the new operator replaces the previous operator for the next operation
 
 operator.forEach(item => {
     item.addEventListener("click", (e) => {
+        point.disabled = false;
+        // for (let item = 0; item > operator.length; item++) {
+        //     operator[item].disabled = true;
+        // }
+
         if (firstNumber == "") {
             firstNumber = display.innerHTML
-            point.disabled = false; 
             firstOperator = e.target.value
             console.log(firstNumber)
             display.innerHTML = ""
         } else { 
             secondNumber = display.innerHTML
             newOperator = e.target.value;
-            point.disabled = false; 
             if (firstOperator == "+") {
-                output = parseFloat(firstNumber) + parseFloat(secondNumber);
+                partialOutput = parseFloat(firstNumber) + parseFloat(secondNumber);
             } else if (firstOperator == "-") {
-                output = parseFloat(firstNumber) - parseFloat(secondNumber);
+                partialOutput = parseFloat(firstNumber) - parseFloat(secondNumber);
             } else if (firstOperator == "x") {
-                output = parseFloat(firstNumber) * parseFloat(secondNumber);
+                partialOutput = parseFloat(firstNumber) * parseFloat(secondNumber);
             } else if (firstOperator == "÷") {
-                output = parseFloat(firstNumber) / parseFloat(secondNumber);
+                partialOutput = parseFloat(firstNumber) / parseFloat(secondNumber);
             }
             // display.innerHTML = output
-            console.log(output)
-            firstNumber = output
+            console.log(partialOutput)
+            firstNumber = partialOutput
             display.innerHTML = "";
             firstOperator = newOperator
         }
@@ -102,18 +121,19 @@ operator.forEach(item => {
 equal.addEventListener("click", (e) => {
     secondNumber = display.innerHTML
     if (firstOperator == "+") {
-        output = parseFloat(firstNumber) + parseFloat(secondNumber);
+        finalOutput = parseFloat(firstNumber) + parseFloat(secondNumber);
     } else if (firstOperator == "-") {
-        output = parseFloat(firstNumber) - parseFloat(secondNumber);
+        finalOutput = parseFloat(firstNumber) - parseFloat(secondNumber);
     } else if (firstOperator == "x") {
-        output = parseFloat(firstNumber) * parseFloat(secondNumber);
+        finalOutput = parseFloat(firstNumber) * parseFloat(secondNumber);
     } else if (firstOperator == "÷") {
-        output = parseFloat(firstNumber) / parseFloat(secondNumber);
+        finalOutput = parseFloat(firstNumber) / parseFloat(secondNumber);
     }
-    display.innerHTML = output
+    display.innerHTML = finalOutput
     point.disabled = false;
-    firstNumber = secondNumber
-    secondNumber = output
+    equal.disabled = true;
+    firstNumber = "";
+    // secondNumber = output
 })
 
 //clear button
@@ -125,17 +145,26 @@ clear.addEventListener("click", (e) => {
     firstNumber = "";
     secondNumber = "";
     firstOperator = "";
+    output = "";
 })
 
 //percentage button
 //disable decimal point
 percentage.addEventListener("click", e => {
-    display.innerHTML = parseFloat(display.innerHTML)/100
     point.disabled = true;
+    if (display.innerHTML == "") {
+        display.innerHTML = "0"
+    } else {
+        display.innerHTML = parseFloat(display.innerHTML)/100
+    }
 })
 
 //negate button
 negate.addEventListener("click", (e) => {
-    display.innerHTML = parseFloat(display.innerHTML)* (-1)
+    if (display.innerHTML == "") {
+        display.innerHTML = "0"
+    } else {
+        display.innerHTML = parseFloat(display.innerHTML)* (-1)
+    }
 })
 
