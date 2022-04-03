@@ -3,25 +3,27 @@ $color-background: black;
 .grid {
     border: 2px solid black;
     border-radius: 20px;
-    border-left: 20px;
-    height: 400px;
+    height: 500px;
     width: 300px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-items: center;
-    gap: 15px;
     background-color: $color-background;
-
+    justify-content: space-around;
+    align-content: space-around;
 }
 
 #display {
-    border: 20px none;
+    border: 20px;
     padding: 20px;
-    height: 30px;
-    max-height: 30px;
+    height: 60px;
+    max-height: 60px;
     text-align: right;
-    font-size: 32px;
+    font-size: 52px;
     color: white;
+    // max-width: 8ch;
+    // text-overflow: ellipsis;
+    // overflow;
+    // white-space: nowrap;
     grid-column-start: 1;
     grid-column-end: 5;
 }
@@ -29,4 +31,5 @@ $color-background: black;
 #zero {
     grid-column-start: 1;
     grid-column-end: 3;
+    align-items: center;
 }

@@ -1,66 +1,71 @@
-$color-numbers-background: #495057;
+$color-numbers-background: #323232;
 $color-numbers: white;
 $color-operators-background: #ff9e00;
 $color-operators: white;
-$color-other-background: #adb5bd;
+$color-other-background: #bfc0c0;
 $color-other: black;
 
 .number {
     background-color: $color-numbers-background;
-    height: 50px;
-    width: 50px;;
+    border: none;
+    height: 60px;
+    width: 60px;;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
     color: $color-numbers;
     text-align: center;
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .operator {
     background-color: $color-operators-background;
-    height: 50px;
-    width: 50px;;
+    border: none;
+    height: 60px;
+    width: 60px;;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
     color: $color-operators;
     text-align: center;
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .other {
     background-color: $color-other-background;
-    height: 50px;
-    width: 50px;;
+    border: none;
+    height: 60px;
+    width: 60px;;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
     color: $color-other;
     text-align: center;
-    font-size: 24px;
+    font-size: 28px;
   }
 
   #equal {
     background-color: $color-operators-background;
-    height: 50px;
-    width: 50px;;
+    border: none;
+    height: 60px;
+    width: 60px;;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
     color: $color-operators;
     text-align: center;
-    font-size: 24px;
+    font-size: 28px;
   }
 
   #zero {
     background-color: $color-numbers-background;
-    height: 50px;
-    width: 100px;;
+    border: none;
+    height: 60px;
+    width: 130px;;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
