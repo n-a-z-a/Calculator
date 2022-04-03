@@ -75,13 +75,13 @@ operator.forEach(item => {
             secondNumber = display.innerHTML;
             newOperator = e.target.value;
             if (firstOperator == "+") {
-                partialOutput = (parseFloat(firstNumber) + parseFloat(secondNumber)).toLocaleString('en-US');
+                partialOutput = parseFloat(firstNumber) + parseFloat(secondNumber);
             } else if (firstOperator == "-") {
-                partialOutput = (parseFloat(firstNumber) - parseFloat(secondNumber)).toLocaleString('en-US');
+                partialOutput = parseFloat(firstNumber) - parseFloat(secondNumber);
             } else if (firstOperator == "x") {
-                partialOutput = (parseFloat(firstNumber) * parseFloat(secondNumber)).toLocaleString('en-US');
+                partialOutput = parseFloat(firstNumber) * parseFloat(secondNumber);
             } else if (firstOperator == "÷") {
-                partialOutput = (parseFloat(firstNumber) / parseFloat(secondNumber)).toLocaleString('en-US');
+                partialOutput = parseFloat(firstNumber) / parseFloat(secondNumber);
             }
             firstNumber = partialOutput;
             display.innerHTML = "";
@@ -100,16 +100,16 @@ equal.addEventListener("click", (e) => {
     if (firstNumber != "") {
         secondNumber = display.innerHTML;
         if (firstOperator == "+") {
-            finalOutput = (parseFloat(firstNumber) + parseFloat(secondNumber)).toLocaleString('en-US');
+            finalOutput = parseFloat(firstNumber) + parseFloat(secondNumber);
         } else if (firstOperator == "-") {
-            finalOutput = (parseFloat(firstNumber) - parseFloat(secondNumber)).toLocaleString('en-US');
+            finalOutput = parseFloat(firstNumber) - parseFloat(secondNumber);
         } else if (firstOperator == "x") {
-            finalOutput = (parseFloat(firstNumber) * parseFloat(secondNumber)).toLocaleString('en-US');
+            finalOutput = parseFloat(firstNumber) * parseFloat(secondNumber);
         } else if (firstOperator == "÷") {
-            finalOutput = (parseFloat(firstNumber) / parseFloat(secondNumber)).toLocaleString('en-US');
+            finalOutput = parseFloat(firstNumber) / parseFloat(secondNumber);
         }
         display.innerHTML = finalOutput;
-    } else { display.innerHTML = (parseFloat(display.innerHTML)).toLocaleString('en-US');
+    } else { display.innerHTML = display.innerHTML;
         }
     point.disabled = false;
     equal.disabled = true;
@@ -145,7 +145,7 @@ negate.addEventListener("click", (e) => {
     if (display.innerHTML == "") {
         display.innerHTML = "";
     } else {
-        display.innerHTML = (parseFloat(display.innerHTML)* (-1)).toLocaleString('en-US');
+        display.innerHTML = parseFloat(display.innerHTML)* (-1);
     }
 })
 
