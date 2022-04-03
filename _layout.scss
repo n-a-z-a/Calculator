@@ -1,14 +1,32 @@
+$color-background: black;
+
+.grid {
+    border: 2px solid black;
+    border-radius: 20px;
+    border-left: 20px;
+    height: 400px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 15px;
+    background-color: $color-background;
+
+}
+
 #display {
     border: 20px none;
     padding: 20px;
     height: 30px;
     max-height: 30px;
-    text-align: end;
+    text-align: right;
+    font-size: 32px;
+    color: white;
+    grid-column-start: 1;
+    grid-column-end: 5;
 }
 
-.grid {
-    position: static;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+#zero {
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
