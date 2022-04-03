@@ -58,6 +58,8 @@ number.forEach(item => {
 //clear the display so a new number can be entered
 //the new operator replaces the previous operator for the next operation
 
+//added commas separators for thousands
+
 operator.forEach(item => {
     item.addEventListener("click", (e) => {
         point.disabled = false;
@@ -73,13 +75,13 @@ operator.forEach(item => {
             secondNumber = display.innerHTML;
             newOperator = e.target.value;
             if (firstOperator == "+") {
-                partialOutput = parseFloat(firstNumber) + parseFloat(secondNumber);
+                partialOutput = (parseFloat(firstNumber) + parseFloat(secondNumber)).toLocaleString('en-US');
             } else if (firstOperator == "-") {
-                partialOutput = parseFloat(firstNumber) - parseFloat(secondNumber);
+                partialOutput = (parseFloat(firstNumber) - parseFloat(secondNumber)).toLocaleString('en-US');
             } else if (firstOperator == "x") {
-                partialOutput = parseFloat(firstNumber) * parseFloat(secondNumber);
+                partialOutput = (parseFloat(firstNumber) * parseFloat(secondNumber)).toLocaleString('en-US');
             } else if (firstOperator == "÷") {
-                partialOutput = parseFloat(firstNumber) / parseFloat(secondNumber);
+                partialOutput = (parseFloat(firstNumber) / parseFloat(secondNumber)).toLocaleString('en-US');
             }
             firstNumber = partialOutput;
             display.innerHTML = "";
@@ -98,16 +100,16 @@ equal.addEventListener("click", (e) => {
     if (firstNumber != "") {
         secondNumber = display.innerHTML;
         if (firstOperator == "+") {
-            finalOutput = parseFloat(firstNumber) + parseFloat(secondNumber);
+            finalOutput = (parseFloat(firstNumber) + parseFloat(secondNumber)).toLocaleString('en-US');
         } else if (firstOperator == "-") {
-            finalOutput = parseFloat(firstNumber) - parseFloat(secondNumber);
+            finalOutput = (parseFloat(firstNumber) - parseFloat(secondNumber)).toLocaleString('en-US');
         } else if (firstOperator == "x") {
-            finalOutput = parseFloat(firstNumber) * parseFloat(secondNumber);
+            finalOutput = (parseFloat(firstNumber) * parseFloat(secondNumber)).toLocaleString('en-US');
         } else if (firstOperator == "÷") {
-            finalOutput = parseFloat(firstNumber) / parseFloat(secondNumber);
+            finalOutput = (parseFloat(firstNumber) / parseFloat(secondNumber)).toLocaleString('en-US');
         }
         display.innerHTML = finalOutput;
-    } else { display.innerHTML = display.innerHTML;
+    } else { display.innerHTML = (parseFloat(display.innerHTML)).toLocaleString('en-US');
         }
     point.disabled = false;
     equal.disabled = true;
@@ -144,7 +146,7 @@ negate.addEventListener("click", (e) => {
     if (display.innerHTML == "") {
         display.innerHTML = "";
     } else {
-        display.innerHTML = parseFloat(display.innerHTML)* (-1);
+        display.innerHTML = (parseFloat(display.innerHTML)* (-1)).toLocaleString('en-US');
     }
 })
 
