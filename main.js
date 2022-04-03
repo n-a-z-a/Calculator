@@ -58,7 +58,7 @@ number.forEach(item => {
 //clear the display so a new number can be entered
 //the new operator replaces the previous operator for the next operation
 
-//added commas separators for thousands
+//added comma separators for thousands
 
 operator.forEach(item => {
     item.addEventListener("click", (e) => {
@@ -114,7 +114,6 @@ equal.addEventListener("click", (e) => {
     point.disabled = false;
     equal.disabled = true;
     firstNumber = "";
-    // secondNumber = output
 })
 
 //clear button

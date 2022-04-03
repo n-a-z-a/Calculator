@@ -8,12 +8,9 @@ $color-other: black;
 .number {
     background-color: $color-numbers-background;
     border: none;
-    height: 75px;
-    width: 75px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50px;
     color: $color-numbers;
     text-align: center;
     font-size: 36px;
@@ -22,12 +19,9 @@ $color-other: black;
   .operator {
     background-color: $color-operators-background;
     border: none;
-    height: 75px;
-    width: 75px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50px;
     color: $color-operators;
     text-align: center;
     font-size: 36px;
@@ -36,12 +30,9 @@ $color-other: black;
   .other {
     background-color: $color-other-background;
     border: none;
-    height: 75px;
-    width: 75px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50px;;
     color: $color-other;
     text-align: center;
     font-size: 36px;
@@ -50,12 +41,9 @@ $color-other: black;
   #equal {
     background-color: $color-operators-background;
     border: none;
-    height: 75x;
-    width: 75px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
+    height: 80x;
+    width: 80px;
+    border-radius: 50px;;
     color: $color-operators;
     text-align: center;
     font-size: 36px;
@@ -64,12 +52,36 @@ $color-other: black;
   #zero {
     background-color: $color-numbers-background;
     border: none;
-    height: 75px;
+    height: 80px;
     width: 165px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-radius: 50px;;
     color: $color-operators;
     text-align: center;
   }
+
+  @media screen and (min-width: 480px) {
+
+    .number {
+    height: 80px;
+    width: 80px;
+    font-size: 36px;
+    };
+
+    .operator {
+    height: 80px;
+    width: 80px;
+    font-size: 36px;
+    }
+
+    .other {
+    height: 80px;
+    width: 80px;
+    font-size: 36px;
+    }
+
+    #equal {
+      height: 80px;
+      width: 80px;
+      font-size: 36px;
+    }
+}
