@@ -52,13 +52,11 @@ number.forEach(item => {
 //CASE 2: if the operator button is pressed to concatenate a new operation, then
 //store the number on display as second number
 //store the new operator
-//re-enable the ecimal point button
+//re-enable the decimal point button
 //execute the operation up to that point
 //the output becomes the new firstNumber
 //clear the display so a new number can be entered
 //the new operator replaces the previous operator for the next operation
-
-//added comma separators for thousands
 
 operator.forEach(item => {
     item.addEventListener("click", (e) => {
