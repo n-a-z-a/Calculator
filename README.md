@@ -12,7 +12,7 @@ The design of this calculator has been created to resemble that of an iOS calcul
 - This calculator can perform all the standard operations (addition, subtraction, multiplication and division) and accepts both integers and decimals.
 - It can also perform chained operations and return the final output (i.e. 4 * 5 / 2 - 7 + 2 = 5).
 - The "%" button divides the number on display by 100.
-- The "+/-" button turns a positive number into a negative one and viceversa.
+- The "+/-" button turns a positive number into a negative one and vice versa.
 - The "C" button clears the display and initializes the operations.
 
 - Each number can contain only one decimal point. 
